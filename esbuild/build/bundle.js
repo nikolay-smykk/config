@@ -22646,7 +22646,12 @@
   // src/App.jsx
   var import_react = __toESM(require_react());
   var App = () => {
-    return /* @__PURE__ */ import_react.default.createElement("div", null, "Hello World");
+    const onBtnClick = () => {
+      throw new Error("Error in  BTN");
+    };
+    return /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("button", {
+      onClick: onBtnClick
+    }, "Click me"), /* @__PURE__ */ import_react.default.createElement("h1", null, "Hello World"));
   };
 
   // src/index.jsx
