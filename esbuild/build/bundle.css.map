@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/style/index.css", "../src/index.css"],
+  "sourcesContent": ["h1{\n    color:black\n}", "@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);\n@import url(./style/index.css);\n\ndiv{\n    color:red\n}\nh1{\n    color: yellow;\n}"],
+  "mappings": "wEAAA,GACI,WCEJ,IACI,UAEJ,GACI",
+  "names": []
+}

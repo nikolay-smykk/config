@@ -1,14 +1,2 @@
-@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700";
-
-/* src/style/index.css */
-h1 {
-  color: black;
-}
-
-/* src/index.css */
-div {
-  color: red;
-}
-h1 {
-  color: yellow;
-}
+@import"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700";h1{color:#000}div{color:red}h1{color:#ff0}
+/*# sourceMappingURL=bundle.css.map */
