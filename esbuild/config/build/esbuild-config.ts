@@ -1,11 +1,7 @@
 import { BuildOptions } from "esbuild";
-import path from "path"
+import path from "path";
 
 const mode = process.env.MODE || "development";
-
-
-
-
 
 const isDev = mode === "development";
 const isProd = mode === "production";
@@ -13,7 +9,7 @@ const isProd = mode === "production";
 const resolveRoot = (...paths: string[]) => {
   return path.resolve(__dirname, "../", "..", ...paths);
 };
-const settings:BuildOptions = {
+const settings: BuildOptions = {
   outdir: resolveRoot("build"),
   entryPoints: [resolveRoot("src", "index.tsx")],
   entryNames: "bundle",
@@ -21,7 +17,11 @@ const settings:BuildOptions = {
   tsconfig: resolveRoot("tsconfig.json"),
   minify: isProd,
   sourcemap: true,
-}
-
+  loader: {
+    ".png": "file",
+    ".svg": "file",
+    ".jpg": "file"
+  }
+};
 
 export default settings;
