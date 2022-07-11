@@ -5,12 +5,16 @@ const path = require("path");
 const isDev = mode === "development";
 const isProd = mode === "production";
 
+const resolveRoot = (...paths) => {
+  return path.resolve(__dirname, "../", "..", ...paths);
+};
+
 module.exports = {
-  outdir: path.resolve(__dirname, "..", "..", "build"),
-  entryPoints: [path.resolve(__dirname, "..", "..", "src", "index.tsx")],
+  outdir: resolveRoot("build"),
+  entryPoints: [resolveRoot("src", "index.tsx")],
   entryNames: "bundle",
   bundle: true,
-  tsconfig: path.resolve(__dirname, "..", "..", "tsconfig.json"),
+  tsconfig: resolveRoot("tsconfig.json"),
   minify: isProd,
   sourcemap: true
 };
