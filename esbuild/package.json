@@ -4,16 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild src/app.jsx --bundle --outfile=build/out.js",
+    "build": "node ./config/build/esbuild-config.js",
     "browser": "esbuild src/app.jsx --bundle --minify --sourcemap --target=chrome58,firefox57,safari11,edge16 --outfile=browser/out.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "esbuild": "^0.14.49"
   },
   "dependencies": {
+    "esbuild-wasm": "^0.14.49",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
