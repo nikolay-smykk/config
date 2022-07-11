@@ -23,7 +23,16 @@ const settings: BuildOptions = {
     ".svg": "file",
     ".jpg": "file"
   },
-  plugins: [CleanPlug]
+  plugins: [CleanPlug],
+  watch: {
+    onRebuild(error, result) {
+      if (error) {
+        console.log("onRebuild error", error);
+      } else {
+        console.log("onRebuild success", result);
+      }
+    }
+  }
 };
 
 export default settings;
