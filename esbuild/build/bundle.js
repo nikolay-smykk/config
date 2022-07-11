@@ -22608,9 +22608,40 @@
     }
   });
 
+  // node_modules/react-dom/client.js
+  var require_client = __commonJS({
+    "node_modules/react-dom/client.js"(exports) {
+      "use strict";
+      var m = require_react_dom();
+      if (false) {
+        exports.createRoot = m.createRoot;
+        exports.hydrateRoot = m.hydrateRoot;
+      } else {
+        i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        exports.createRoot = function(c, o) {
+          i.usingClientEntryPoint = true;
+          try {
+            return m.createRoot(c, o);
+          } finally {
+            i.usingClientEntryPoint = false;
+          }
+        };
+        exports.hydrateRoot = function(c, h, o) {
+          i.usingClientEntryPoint = true;
+          try {
+            return m.hydrateRoot(c, h, o);
+          } finally {
+            i.usingClientEntryPoint = false;
+          }
+        };
+      }
+      var i;
+    }
+  });
+
   // src/index.jsx
   var import_react2 = __toESM(require_react());
-  var import_react_dom = __toESM(require_react_dom());
+  var import_client = __toESM(require_client());
 
   // src/App.jsx
   var import_react = __toESM(require_react());
@@ -22619,7 +22650,7 @@
   };
 
   // src/index.jsx
-  var root = (0, import_react_dom.createRoot)(document.getElementById("root"));
+  var root = (0, import_client.createRoot)(document.getElementById("root"));
   root.render(/* @__PURE__ */ import_react2.default.createElement(App, null));
 })();
 /**
