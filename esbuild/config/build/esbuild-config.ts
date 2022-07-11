@@ -1,20 +1,27 @@
+import { BuildOptions } from "esbuild";
+import path from "path"
+
 const mode = process.env.MODE || "development";
 
-const path = require("path");
+
+
+
 
 const isDev = mode === "development";
 const isProd = mode === "production";
 
-const resolveRoot = (...paths) => {
+const resolveRoot = (...paths: string[]) => {
   return path.resolve(__dirname, "../", "..", ...paths);
 };
-
-module.exports = {
+const settings:BuildOptions = {
   outdir: resolveRoot("build"),
   entryPoints: [resolveRoot("src", "index.tsx")],
   entryNames: "bundle",
   bundle: true,
   tsconfig: resolveRoot("tsconfig.json"),
   minify: isProd,
-  sourcemap: true
-};
+  sourcemap: true,
+}
+
+
+export default settings;
