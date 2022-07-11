@@ -14,7 +14,7 @@ ESBuild.serve(
   }
 )
   .then(() => {
-    console.log("ESBuild server running on port " + PORT);
+    console.log("ESBuild server running on port http://localhost:" + PORT);
   })
   .catch(err => {
     console.error("err in esBuild", err);

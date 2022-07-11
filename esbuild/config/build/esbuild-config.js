@@ -7,7 +7,7 @@ const isProd = mode === "production";
 
 module.exports = {
   outdir: path.resolve(__dirname, "..", "..", "build"),
-  entryPoints: [path.resolve(__dirname, "..", "..", "src", "index.jsx")],
+  entryPoints: [path.resolve(__dirname, "..", "..", "src", "index.tsx")],
   entryNames: "bundle",
   bundle: true,
   minify: isProd,
