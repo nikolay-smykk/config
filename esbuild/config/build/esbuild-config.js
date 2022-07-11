@@ -10,6 +10,7 @@ module.exports = {
   entryPoints: [path.resolve(__dirname, "..", "..", "src", "index.tsx")],
   entryNames: "bundle",
   bundle: true,
+  tsconfig: path.resolve(__dirname, "..", "..", "tsconfig.json"),
   minify: isProd,
   sourcemap: true
 };
