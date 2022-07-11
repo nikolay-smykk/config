@@ -12,7 +12,7 @@ const resolveRoot = (...paths: string[]) => {
 const settings: BuildOptions = {
   outdir: resolveRoot("build"),
   entryPoints: [resolveRoot("src", "index.tsx")],
-  entryNames: "bundle",
+  entryNames: "[dir]/bundle.[name]-[hash]",
   bundle: true,
   tsconfig: resolveRoot("tsconfig.json"),
   minify: isProd,
